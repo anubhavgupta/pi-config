@@ -1,0 +1,39 @@
+{
+  "providers": {
+    "dgx-spark-sg-lang": {
+      "baseUrl": "http://192.168.1.30:8888/v1",
+      "api": "openai-completions",
+      "apiKey": "none",
+      "models": [
+        {
+          "id": "qwen3.8-27b-sglang",
+          "contextWindow": 262144,
+          "maxTokens": 120000,
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "minimal": "low",
+            "low": "low",
+            "medium": "medium",
+            "high": "xhigh",
+            "xhigh": "xhigh",
+            "max": "xhigh"
+          },
+          "compat": {
+            "thinkingFormat": "chat-template",
+            "supportsReasoningEffort": false,
+            "supportsDeveloperRole": false,
+            "chatTemplateKwargs": {
+              "enable_thinking": { "$var": "thinking.enabled" },
+              "reasoning_effort": { "$var": "thinking.effort", "omitWhenOff": true }
+            }
+          }
+        },
+        {
+          "id": "qwen3.6-35b-sglang",
+          "contextWindow": 262144,
+          "maxTokens": 120000
+        }
+      ]
+    }
+  }
+}
