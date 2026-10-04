@@ -30,6 +30,31 @@
           }
         },
         {
+          "id": "Qwen3.8-Flash-Next",
+          "name": "Qwen3.8 Flash Next",
+          "input": ["text", "image"],
+          "contextWindow": 262144,
+          "maxTokens": 120000,
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "minimal": "low",
+            "low": "low",
+            "medium": "medium",
+            "high": "xhigh",
+            "xhigh": "xhigh",
+            "max": "xhigh"
+          },
+          "compat": {
+            "thinkingFormat": "chat-template",
+            "supportsReasoningEffort": false,
+            "supportsDeveloperRole": false,
+            "chatTemplateKwargs": {
+              "enable_thinking": { "$var": "thinking.enabled" },
+              "reasoning_effort": { "$var": "thinking.effort", "omitWhenOff": true }
+            }
+          }
+        },
+        {
           "id": "qwen3.6-35b-sglang",
           "name": "Qwen3.6 35B",
           "input": ["text", "image"],
