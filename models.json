@@ -31,9 +31,35 @@
         },
         {
           "id": "qwen3.6-35b-sglang",
+          "name": "Qwen3.6 35B",
           "input": ["text", "image"],
           "contextWindow": 262144,
-          "maxTokens": 120000
+          "maxTokens": 120000,
+          "reasoning": true,
+          "compat": {
+            "thinkingFormat": "chat-template",
+            "supportsReasoningEffort": false,
+            "supportsDeveloperRole": false,
+            "chatTemplateKwargs": {
+              "enable_thinking": { "$var": "thinking.enabled" }
+            }
+          }
+        },
+        {
+          "id": "ornith-1.5-35b-a3b-sglang",
+          "name": "Ornith 1.5 35B A3B",
+          "input": ["text", "image"],
+          "contextWindow": 262144,
+          "maxTokens": 120000,
+          "reasoning": true,
+          "compat": {
+            "thinkingFormat": "chat-template",
+            "supportsReasoningEffort": false,
+            "supportsDeveloperRole": false,
+            "chatTemplateKwargs": {
+              "enable_thinking": { "$var": "thinking.enabled" }
+            }
+          }
         }
       ]
     }
